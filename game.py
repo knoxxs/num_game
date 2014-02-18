@@ -21,7 +21,13 @@ def main():
         guess = ""
 
         while guess != num:
-            guess = int(raw_input("Take a guess: "))
+            while True:
+                try:
+                    guess = int(raw_input("Take a guess: "))
+                    break
+                except Exception, e:
+                    print "Please enter an integer."
+                
             if guess < num:
                 print "Guess higher next time\n"
             elif guess > num:
